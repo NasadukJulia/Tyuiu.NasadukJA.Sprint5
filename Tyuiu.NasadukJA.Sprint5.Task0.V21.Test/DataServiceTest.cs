@@ -10,12 +10,11 @@ namespace Tyuiu.NasadukJA.Sprint5.Task0.V21.Test
         [TestMethod]
         public void CheckedExistsFile()
         {
-            string path = @"C:\Users\Julia\source\repos\Tyuiu.NasadukJA.Sprint5\Tyuiu.NasadukJA.Sprint5.Task0.V21\bin\Debug\net8.0\OutPutFileTask0.txt";
+            string path = Path.Combine(Path.GetTempPath(), "OutPutFileTask0.txt");
 
             FileInfo fileInfo = new FileInfo(path);
             bool fileExists = fileInfo.Exists;
-            bool wait = true;
-            Assert.AreEqual(wait, fileExists);
+            Assert.AreEqual(true, fileExists);
         }
     }
 }
