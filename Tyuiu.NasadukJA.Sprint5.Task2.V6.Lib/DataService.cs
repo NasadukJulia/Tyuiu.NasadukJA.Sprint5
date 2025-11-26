@@ -30,10 +30,9 @@ namespace Tyuiu.NasadukJA.Sprint5.Task2.V6.Lib
                 }
             }
 
-            string str = "";
-
             for (int i = 0; i < rows; i++)
             {
+                string str = "";
                 for (int j = 0; j < columns; j++)
                 {
                     if (j != columns - 1)
