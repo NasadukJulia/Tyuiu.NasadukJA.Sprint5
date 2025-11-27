@@ -1,11 +1,33 @@
-﻿namespace Tyuiu.NasadukJA.Sprint5.Task6.V10.Test
+﻿using System.IO;
+
+using Tyuiu.NasadukJA.Sprint5.Task6.V10.Lib;
+
+namespace Tyuiu.NasadukJA.Sprint5.Task6.V10.Test
 {
     [TestClass]
-    public sealed class Test1
+    public sealed class DataServiceTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ValidCalc()
         {
+            DataService ds = new DataService();
+            string path = Path.Combine(Path.GetTempPath(), "InPutDataFileTask6V10.txt");
+
+            var res = ds.LoadFromDataFile(path);
+            int wait = 3;
+            Assert.AreEqual(wait, res);
+        }
+
+        [TestMethod]
+        public void CheckedExistsFile()
+        {
+            string path = Path.Combine(Path.GetTempPath(), "InPutDataFileTask6V10.txt");
+
+            FileInfo fileInfo = new FileInfo(path);
+            bool fileExists = fileInfo.Exists;
+
+            bool wait = true;
+            Assert.AreEqual(wait, fileExists);
         }
     }
 }
